@@ -870,6 +870,7 @@ bool operator==(const Result<T, E>& lhs, const Result<T, E>& rhs) {
     if (lhs.isErr() && rhs.isErr()) {
         return lhs.storage().template get<E>() == rhs.storage().template get<E>();
     }
+    return false;
 }
 
 template<typename T, typename E>
